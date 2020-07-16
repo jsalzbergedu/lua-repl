@@ -131,7 +131,7 @@ local function sortedpairs(t)
   end
 
   local sort_func = seen_non_string and cross_type_order or nil
-  tsort(keys, sort_func)
+  pcall(tsort, keys, sort_func)
 
   local index = 1
   return function()
